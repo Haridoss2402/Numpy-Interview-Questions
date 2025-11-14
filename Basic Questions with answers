@@ -1,0 +1,415 @@
+Basic Level
+
+What is NumPy?
+
+What is an ndarray?
+
+Difference between Python list and NumPy array?
+
+How to create a NumPy array?
+
+What is dtype?
+
+How to check shape, size, dimensions?
+
+What is vectorization?
+
+What are zeros(), ones(), arange(), linspace()?
+
+What is the difference between arange() and range()?
+
+What is broadcasting?
+
+What is itemsize?
+
+How to convert list to array?
+
+What is slicing in NumPy?
+
+What is indexing in NumPy?
+
+How to reverse a NumPy array?
+
+🔹 Intermediate Level
+
+What is reshape()?
+
+Difference between reshape() and resize()?
+
+What are flatten() and ravel()?
+
+What is view vs copy?
+
+How to concatenate arrays?
+
+Difference between hstack(), vstack()?
+
+How to filter values using boolean indexing?
+
+How to find unique values?
+
+How to detect NaN values?
+
+How to replace NaN values?
+
+What is axis in NumPy functions?
+
+What are universal functions (ufuncs)?
+
+What is np.where()?
+
+What is np.argmax(), np.argmin()?
+
+Difference between np.sum() and Python sum()?
+
+🔹 Advanced Level
+
+What are strides?
+
+Explain memory layout (C-order vs F-order)?
+
+What is broadcasting rule?
+
+What is np.vectorize()?
+
+What is np.random and where used?
+
+What is dot product and matrix multiplication?
+
+What is np.einsum()?
+
+Difference between np.dot() and np.matmul()?
+
+What are structured arrays?
+
+What is memory-mapping?
+
+What is ndim?
+
+What is np.squeeze()?
+
+What is np.expand_dims()?
+
+What is tile() and repeat()?
+
+What is meshgrid()?
+
+What is advanced indexing?
+
+What are fancy indexing rules?
+
+Explain broadcasting with example.
+
+What is the difference between copy() and deepcopy()?
+
+How to save and load arrays?
+
+What is np.genfromtxt()?
+
+What is np.percentile()?
+
+What is np.histogram()?
+
+What is np.pad()?
+
+What is np.sort() vs np.argsort()?
+
+What is np.trace()?
+
+What is np.linalg.inv()?
+
+What is np.linalg.det()?
+
+What is np.linalg.eig()?
+
+What is a masked array?
+
+
+##  answers
+
+1. What is NumPy?
+
+NumPy (Numerical Python) is a Python library used for fast numerical computation using N-dimensional arrays.
+
+2. What is an ndarray?
+
+ndarray is NumPy’s main data structure — an N-dimensional, homogeneous, fast, memory-efficient array.
+
+3. Difference between Python list and NumPy array?
+Python List	NumPy Array
+Slower	Very fast (C backend)
+Stores mixed data types	Stores same data type
+No vectorization	Fully vectorized
+More memory usage	Less memory usage
+4. How to create a NumPy array?
+import numpy as np
+arr = np.array([1, 2, 3])
+
+5. What is dtype?
+
+dtype represents the data type (int32, float64, etc.) of elements stored in ndarray.
+
+6. How to check shape, size, dimensions?
+arr.shape   # rows, columns
+arr.size    # total elements
+arr.ndim    # number of dimensions
+
+7. What is vectorization?
+
+Performing operations on arrays without loops, using optimized C routines.
+Example:
+
+a + 10      # vectorized
+
+8. What are zeros(), ones(), arange(), linspace()?
+
+zeros() → array of 0
+
+ones() → array of 1
+
+arange() → values with step size
+
+linspace() → values evenly spaced between two numbers
+
+9. What is the difference between arange() and range()?
+
+range() → Python, returns list-like object
+
+arange() → NumPy, returns ndarray and supports floats
+
+10. What is broadcasting?
+
+Automatic expansion of smaller array to match the shape of larger array during operations.
+
+11. What is itemsize?
+
+Number of bytes each element in the array occupies.
+
+12. How to convert list to array?
+np.array(my_list)
+
+13. What is slicing in NumPy?
+
+Extracting parts of array:
+
+arr[1:4]
+arr[:, 1]
+
+14. What is indexing in NumPy?
+
+Accessing elements by position:
+
+arr[0]       # first element
+
+15. How to reverse a NumPy array?
+arr[::-1]
+
+🔹 Intermediate Level Answers
+16. What is reshape()?
+
+Changes the shape of an array without changing data.
+
+17. Difference between reshape() and resize()?
+reshape()	resize()
+Returns new array	Modifies original array
+Fails if size mismatch	Fills with 0/repeats
+18. What are flatten() and ravel()?
+flatten()	ravel()
+Returns a copy	Returns a view
+Slower	Faster
+19. What is view vs copy?
+
+view → shares memory
+
+copy → new memory
+Modifying a view affects original.
+
+20. How to concatenate arrays?
+np.concatenate([a, b])
+
+21. Difference between hstack() and vstack()?
+
+hstack() → horizontal (columns)
+
+vstack() → vertical (rows)
+
+22. How to filter values using boolean indexing?
+arr[arr > 10]
+
+23. How to find unique values?
+np.unique(arr)
+
+24. How to detect NaN values?
+np.isnan(arr)
+
+25. How to replace NaN values?
+np.nan_to_num(arr)
+
+26. What is axis in NumPy functions?
+
+Axis specifies direction of operation:
+
+axis=0 → column-wise
+
+axis=1 → row-wise
+
+27. What are universal functions (ufuncs)?
+
+Fast vectorized mathematical functions:
+np.add, np.sqrt, np.exp, np.sin, etc.
+
+28. What is np.where()?
+
+Conditional selection:
+
+np.where(arr > 5, 1, 0)
+
+29. What is np.argmax(), np.argmin()?
+
+argmax() → index of max value
+
+argmin() → index of min value
+
+30. Difference between np.sum() and Python sum()?
+
+np.sum() is faster, works on N-dimensional arrays.
+
+Python sum() works only on iterables.
+
+🔹 Advanced Level Answers
+31. What are strides?
+
+Number of bytes to move in memory to the next element along each axis.
+
+32. Explain memory layout (C-order vs F-order).
+
+C-order (row major): last axis changes fastest
+
+F-order (column major): first axis changes fastest
+
+33. What is broadcasting rule?
+
+Two dimensions are compatible if:
+
+they are equal, or
+
+either is 1
+
+34. What is np.vectorize()?
+
+Wrapper to apply a Python function element-wise (not true vectorization).
+
+35. What is np.random and where used?
+
+Module for generating random numbers (ML, simulations, sampling).
+
+36. What is dot product and matrix multiplication?
+
+Dot → a.b
+
+Matrix multiplication → A @ B
+
+37. What is np.einsum()?
+
+Einstein summation — used for optimized matrix operations and tensor operations.
+
+38. Difference between np.dot() and np.matmul()?
+
+matmul() supports matrix multiplication rules
+
+dot() works for vectors and 1D cases also
+
+39. What are structured arrays?
+
+Arrays with different data types per column (like SQL table or Pandas).
+
+40. What is memory-mapping?
+
+Loading large arrays from disk without fully loading into RAM.
+
+41. What is ndim?
+
+Returns number of array dimensions.
+
+42. What is np.squeeze()?
+
+Removes axes of length 1.
+
+43. What is np.expand_dims()?
+
+Adds a new axis (used for CNN, batch dimension).
+
+44. What is tile() and repeat()?
+
+tile() → repeat whole array
+
+repeat() → repeat each element
+
+45. What is meshgrid()?
+
+Creates coordinate matrices for 2D/3D plotting.
+
+46. What is advanced indexing?
+
+Indexing with arrays/lists instead of scalars.
+
+47. What are fancy indexing rules?
+
+Fancy indexing always returns a copy, not a view.
+
+48. Explain broadcasting with example.
+[1,2,3] + 5   → [6,7,8]
+
+49. Difference between copy() and deepcopy()?
+
+copy() → shallow copy
+
+deepcopy() → copies nested objects recursively
+
+50. How to save and load arrays?
+np.save('a.npy', arr)
+np.load('a.npy')
+
+51. What is np.genfromtxt()?
+
+Reads data from CSV/text files, handling missing values.
+
+52. What is np.percentile()?
+
+Computes percentile values (used in outlier detection).
+
+53. What is np.histogram()?
+
+Returns histogram counts and bin edges.
+
+54. What is np.pad()?
+
+Adds padding around array.
+
+55. What is np.sort() vs np.argsort()?
+
+sort() → sorted array
+
+argsort() → indices of sorted order
+
+56. What is np.trace()?
+
+Sum of diagonal of matrix.
+
+57. What is np.linalg.inv()?
+
+Returns inverse of matrix.
+
+58. What is np.linalg.det()?
+
+Returns determinant of matrix.
+
+59. What is np.linalg.eig()?
+
+Returns eigenvalues and eigenvectors.
+
+60. What is a masked array?
+
+Array that hides (masks) certain values — useful for missing or invalid data.
+
+answer ?propered for interview ?
