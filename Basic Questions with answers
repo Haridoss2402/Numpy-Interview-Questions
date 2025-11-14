@@ -2,7 +2,7 @@ Basic Level
 
 What is NumPy?
 
-What is an ndarray?
+What is an ndarray?  
 
 Difference between Python list and NumPy array?
 
@@ -141,6 +141,7 @@ Slower	Very fast (C backend)
 Stores mixed data types	Stores same data type
 No vectorization	Fully vectorized
 More memory usage	Less memory usage
+
 4. How to create a NumPy array?
 import numpy as np
 arr = np.array([1, 2, 3])
@@ -213,10 +214,12 @@ Changes the shape of an array without changing data.
 reshape()	resize()
 Returns new array	Modifies original array
 Fails if size mismatch	Fills with 0/repeats
+
 18. What are flatten() and ravel()?
 flatten()	ravel()
 Returns a copy	Returns a view
 Slower	Faster
+
 19. What is view vs copy?
 
 view → shares memory
@@ -277,6 +280,7 @@ np.sum() is faster, works on N-dimensional arrays.
 Python sum() works only on iterables.
 
 🔹 Advanced Level Answers
+
 31. What are strides?
 
 Number of bytes to move in memory to the next element along each axis.
@@ -412,4 +416,3 @@ Returns eigenvalues and eigenvectors.
 
 Array that hides (masks) certain values — useful for missing or invalid data.
 
-answer ?propered for interview ?
