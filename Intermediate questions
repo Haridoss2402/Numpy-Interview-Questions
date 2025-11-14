@@ -1,0 +1,283 @@
+# 🧩 Part 1 — Basic NumPy Questions (with Answers)
+
+### 1. What is NumPy?
+
+A numerical computing library in Python for fast operations on arrays.
+
+### 2. What is an ndarray?
+
+The core NumPy data structure – an N-dimensional homogeneous array.
+
+### 3. How to create a NumPy array?
+
+```python
+np.array([1,2,3])
+```
+
+### 4. How to check shape, size, and number of dimensions?
+
+```python
+arr.shape, arr.size, arr.ndim
+```
+
+### 5. What is dtype?
+
+Data type of elements inside the array (e.g., int32, float64).
+
+### 6. Difference between list and NumPy array?
+
+NumPy arrays are faster, support vectorization, and consume less memory.
+
+### 7. What is broadcasting?
+
+Automatic expansion of arrays during arithmetic operations.
+
+### 8. What is vectorization?
+
+Performing operations without Python loops (fast, C-optimized).
+
+### 9. What do zeros(), ones(), arange(), linspace() do?
+
+Create special arrays of zeros, ones, sequences, or evenly spaced values.
+
+### 10. How to convert list to array?
+
+```python
+np.array(my_list)
+```
+
+### 11. What is slicing?
+
+Extracting parts of an array.
+
+### 12. How to reverse an array?
+
+```python
+arr[::-1]
+```
+
+### 13. How to generate random numbers?
+
+```python
+np.random.rand(3,3)
+```
+
+### 14. What is np.where used for?
+
+Conditional selection.
+
+### 15. How to find unique values?
+
+```python
+np.unique(arr)
+```
+
+### 16. What is axis?
+
+Direction of operation (0 = columns, 1 = rows).
+
+### 17. How to stack arrays?
+
+```python
+np.hstack(), np.vstack()
+```
+
+### 18. What is reshape?
+
+Change array shape without changing data.
+
+### 19. Difference between reshape and resize?
+
+reshape returns new array, resize modifies original.
+
+### 20. How to find min/max/mean?
+
+```python
+arr.min(), arr.max(), arr.mean()
+```
+
+---
+
+# 🧩 Part 2 — Intermediate NumPy Questions (with Answers)
+
+### 1. How to filter values using boolean indexing?
+
+```python
+arr[arr > 10]
+```
+
+### 2. How to handle NaN values?
+
+```python
+np.isnan(arr)
+np.nan_to_num(arr)
+```
+
+### 3. How to compute dot product?
+
+```python
+np.dot(a, b)
+```
+
+### 4. How to compute matrix multiplication?
+
+```python
+a @ b
+```
+
+### 5. Difference: flatten vs ravel?
+
+flatten returns a copy; ravel returns a view.
+
+### 6. What is a view vs copy?
+
+View shares memory; copy creates new memory.
+
+### 7. How to join multiple arrays?
+
+```python
+np.concatenate([a, b], axis=0)
+```
+
+### 8. How to normalize an array (min-max)?
+
+```python
+(arr - arr.min()) / (arr.max() - arr.min())
+```
+
+### 9. How to standardize (z-score)?
+
+```python
+(arr - arr.mean()) / arr.std()
+```
+
+### 10. What is np.argmax and np.argmin?
+
+Return index of max and min values.
+
+### 11. What is broadcasting rule?
+
+Dimensions are compatible if equal or one is 1.
+
+### 12. What is np.random.choice used for?
+
+Sampling with replacement.
+
+### 13. How to compute covariance?
+
+```python
+np.cov(X, rowvar=False)
+```
+
+### 14. How to compute correlation?
+
+```python
+np.corrcoef(X, rowvar=False)
+```
+
+### 15. What is np.clip?
+
+Limits values between min and max.
+
+### 16. How to sort and get sorted indices?
+
+```python
+np.sort(arr)
+np.argsort(arr)
+```
+
+### 17. How to reshape a 1D array to a column vector?
+
+```python
+arr.reshape(-1,1)
+```
+
+### 18. How to repeat elements?
+
+```python
+np.repeat(arr, 3)
+```
+
+### 19. How to tile an array?
+
+```python
+np.tile(arr, (2,3))
+```
+
+### 20. How to replace negative values with zero?
+
+```python
+arr[arr < 0] = 0
+```
+
+---
+
+# 🧩 Part 3 — Practical Coding Exercises for Data Scientist
+
+### 1. Normalize an array (min-max).
+
+```python
+(arr - arr.min()) / (arr.max() - arr.min())
+```
+
+### 2. Standardize an array (z-score).
+
+```python
+(arr - arr.mean()) / arr.std()
+```
+
+### 3. Replace NaN values with 0.
+
+```python
+np.nan_to_num(arr, nan=0)
+```
+
+### 4. Extract even numbers.
+
+```python
+arr[arr % 2 == 0]
+```
+
+### 5. Create identity matrix.
+
+```python
+np.eye(4)
+```
+
+### 6. Compute dot product of two vectors.
+
+```python
+np.dot(a, b)
+```
+
+### 7. Compute Euclidean distance between two points.
+
+```python
+np.linalg.norm(a - b)
+```
+
+### 8. Get top 3 largest values.
+
+```python
+arr[np.argsort(arr)][-3:]
+```
+
+### 9. Remove outliers using IQR.
+
+```python
+q1, q3 = np.percentile(arr, [25,75])
+iqr = q3 - q1
+clean = arr[(arr >= q1 - 1.5*iqr) & (arr <= q3 + 1.5*iqr)]
+```
+
+### 10. Build a confusion matrix manually.
+
+```python
+mat = np.zeros((n_classes, n_classes), int)
+for t, p in zip(y_true, y_pred):
+    mat[t][p] += 1
+```
+
+--
+
+* Add Pandas, Sciki
